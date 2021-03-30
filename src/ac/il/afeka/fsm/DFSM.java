@@ -429,10 +429,8 @@ and all the non accepting states in the second. */
 	public boolean compute(String input) { 
 		State check= this.initialState;
 		for (int i = 0; i < input.length(); i++) {
-			if(this.transitions.maps(check, input.charAt(i))) {
-				check=transitions.applyTo(check, input.charAt(i));
+			check=transitions.applyTo(check, input.charAt(i));
 			}
-		}
 		return (acceptingStates.contains(check));
 	}
 }
